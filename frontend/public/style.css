@@ -75,13 +75,11 @@ form div input{
 
 
 input {
-    width: 300px;
-    height: 40px;
     border: 1px blueviolet solid;
     background-color: white;
     box-shadow: 5px 5px 5px #aaaaaa;
     border-radius: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 input:focus{
@@ -91,26 +89,46 @@ input:hover{
     border: 1px solid rgb(182, 112, 164);
 }
 
-button{
+.save button{
     position:absolute;
     bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20%;
     height: 40px;
     width: 150px;
     text-align: center;
     border-radius: 25px;
     background-color: blueviolet;
     color: white;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+.delete button{
+    position:absolute;
+    bottom: 2%;
+    right: 20%;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid blueviolet;
+    color: blueviolet;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    margin-top: 20px;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+ 
+.save:hover{
+    background-color: #a977bd;
 }
 
+.introduction{
+    width: 200%;    
+}
 .introduction input{
     height: 300px;
-    width: 820px;
-    
 }
 

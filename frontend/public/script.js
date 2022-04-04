@@ -18,7 +18,7 @@ const inputFields = `
                 <input type="text" id="city" name="city"
                 <label for="house">House number:</label>
                 <input type="text" id="house" name="house">
-                </div>
+            </div>
             <div class="house">
                 <label for="street">Street:</label>
                 <input type="text" id="street" name="street">
@@ -27,8 +27,12 @@ const inputFields = `
                 <label for="introduction">Introduce yourself:</label>
                 <input type="text" id="introduction" name="introduction">
             </div>
-            <div class="button">
-                 <button>Submit</button>
+
+            <div class="save">
+                 <button>Save</button>
+            </div>
+            <div class="delete">
+                 <button>Delete</button>
             </div>
         </form>
     <div>
