@@ -121,8 +121,12 @@ input:hover{
     box-shadow: 5px 5px 5px #aaaaaa;
 }
  
-.save:hover{
+.save button:hover{
     background-color: #a977bd;
+}
+.delete button:hover{
+    color: #a977bd;
+    border: #a977bd 2px solid;
 }
 
 .introduction{
