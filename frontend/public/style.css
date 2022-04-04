@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: inherit;
+  }
+  a{
+    text-decoration: none;
+  }
+  a img {
+    border: none;
+  }
+  
+  button,
+  a {
+    cursor: pointer;
+    color: inherit;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  button,
+  textarea,
+  select {
+    appearance: none !important;
+    border-radius: 0;
+  }
+/* CSS RESET IS OVER */
+
+body{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+#root{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+    position: relative;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+form div{
+    margin-right: 10px;
+    width: calc(100% / 2 - 20px);
+    
+}
+
+form div input{
+    height: 45px;
+    width: 100%;
+} 
+
+
+input {
+    width: 300px;
+    height: 40px;
+    border: 1px blueviolet solid;
+    background-color: white;
+    box-shadow: 5px 5px 5px #aaaaaa;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+input:focus{
+    border: 1px solid rgb(32, 31, 31);
+}
+input:hover{
+    border: 1px solid rgb(182, 112, 164);
+}
+
+button{
+    position:absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 20px;
+}
+
+.introduction input{
+    height: 300px;
+    width: 820px;
+    
+}
+
