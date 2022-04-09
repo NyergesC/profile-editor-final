@@ -1,7 +1,8 @@
 const express = require("express");
 const fs = require('fs');
 const path = require('path');
-const fileUpload = require('express-fileupload')
+const fileUpload = require('express-fileupload');
+const { profile } = require("console");
 
 
 const app = express();
@@ -12,7 +13,7 @@ app.get('/', (req,resp,next)=>{
     resp.sendFile(path.join(`${__dirname}/../frontend/index.html`));
 })
 
-app.use('/public', express.static(`${__dirname}/../frontend/public`));
+app.use('/public', express.static(`${__dirname}/../frontend/public/`));
 
 const dataLocation = path.join(`${__dirname}/../frontend/`)
 
@@ -24,9 +25,9 @@ app.post('/', (req, res) => {
     const file = JSON.stringify(req.body, null, 2);
     const uploadPath = __dirname + '/../backend/data/' + `profile.json`;
     
-    const uploads = path.join(`${__dirname}/../frontend/`);
+    const uploads = path.join(`${__dirname}/../frontend/public/`);
     if(picture) {
-        picture.mv(uploads + picture.name)
+        picture.mv(uploads + "profile.jpg")
     }
     answer.pictureName = picture.name
     res.send(answer)

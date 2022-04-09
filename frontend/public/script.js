@@ -79,7 +79,7 @@ function loadEvent(){
             .then(async data => {
                 if (data.status === 200){
                     const res = await data.json()
-                    document.getElementById("display-image").outerHTML = `<img id="kep" src='upload/${res.pictureName}'>`
+                    document.getElementById("display-image").outerHTML = `<img id="kep" src="public/profile.jpg">`
                     alert("Data is finally mine")
                 }
             
