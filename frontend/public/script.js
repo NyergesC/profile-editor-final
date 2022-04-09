@@ -1,6 +1,9 @@
 const inputFields = `
     <div class="container">
         <form id="form">
+            <div id="display-image">
+                 <input type="file" name="picture"> 
+            </div>       
             <div class="name">
                 <label for="firstname">Firstname:</label>
                 <input type="text" id="firstname" name="firstname">
@@ -31,8 +34,8 @@ const inputFields = `
             <div class="save">
                  <button>Save</button>
             </div>
-            <div class="delete">
-                 <button>Delete</button>
+            <div>
+                 <button id="delete">Delete</button>
             </div>
         </form>
     </div>
@@ -47,12 +50,17 @@ function loadEvent(){
 
     let saveBtn = document.querySelector(".save")
     let formElement = document.getElementById('form')
+    let btnClear = document.getElementById('delete')
+    let inputs = document.querySelectorAll('input')
+
+    console.log(btnClear);
 
     formElement.addEventListener('submit', e => {
         e.preventDefault();
 
         const formData = new FormData()
 
+        formData.append('picture', e.target.querySelector(`input[name='picture']`).files[0]);
         formData.append('firstname', e.target.querySelector(`input[name='firstname']`).value);
         formData.append('surname', e.target.querySelector(`input[name='surname']`).value);
         formData.append('zip', e.target.querySelector(`input[name='zip']`).value);
@@ -71,6 +79,7 @@ function loadEvent(){
             .then(async data => {
                 if (data.status === 200){
                     const res = await data.json()
+                    document.getElementById("display-image").outerHTML = `<img id="kep" src='upload/${res.pictureName}'>`
                     alert("Data is finally mine")
                 }
             
@@ -79,7 +88,27 @@ function loadEvent(){
                 e.target.outerHTML = "error" 
             })
 
-    })
+            
+        })
+        
+        btnClear.addEventListener('click', () => {
+            inputs.forEach(input => input.value = '')
+            document.getElementById('kep').remove()
+
+/*             const fetchSettingsDelete = {
+                method:"DELETE",
+                body: formData
+
+            }
+
+            fetch('/', fetchSettingsDelete)
+                .then(async data =>{
+                    if(data.status === 200){
+                        const res = await data.json()
+                        console.log('deleted')
+                    }
+                }) */
+        })
 
 }
 window.addEventListener('load', loadEvent)
